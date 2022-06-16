@@ -1,0 +1,19 @@
+post:
+  operationId: registerOperator
+  security: 
+    - AccessToken: []
+  tags:
+    - operator
+  summary: オペレータ登録
+  parameters:
+    - name: accessToken
+      in: header
+      required: true
+      schema: 
+        $ref: '#/components/schemas/accessToken'
+
+
+components:
+  schemas:
+    accessToken:
+      title: アクセストークン

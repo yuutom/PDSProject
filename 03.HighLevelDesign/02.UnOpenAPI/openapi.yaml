@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: PDS外部非公開API仕様書
+  version: 2.0.0
+servers:
+  - url: https
+    description: 本番用
+  - url: https://{host}:{port}/
+    description: 開発用
+    variables:
+      host:
+        default: localhost
+      port: 
+        default: '8000'
+paths:
+  /api/operator/register:
+    $ref: ./paths/operator/registerOperator.yaml
+components:
+  securitySchemes:
+    AccessToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+tags:
+  - name: operator
+    description: オペレータに関するAPI群
